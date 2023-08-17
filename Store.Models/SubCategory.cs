@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Store.Models
 {
-    public class SubCategory
+    public class SubCategory : BaseEntity
     {
-        public int Id { get; set; }
         public string? Name { get; set; }
+
+        [ForeignKey("Category")]
+        public long CategoryId { get; set; }
+        public Category Category { get; set; }
+        public ICollection<Product> Products { get; set; }
+        public ICollection<Property> Properties { get; set; }
+
+
     }
 }
