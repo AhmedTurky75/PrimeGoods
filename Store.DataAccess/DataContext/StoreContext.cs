@@ -2,7 +2,7 @@
 using Store.Models;
 using System.Text.RegularExpressions;
 
-namespace Store.DataAccess
+namespace Store.DataAccess.DataContext
 {
     public class StoreContext : DbContext
     {

@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.10">
       <PrivateAssets>all</PrivateAssets>
@@ -16,11 +18,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Store.Bussiness\Store.Bussiness.csproj" />
+    <ProjectReference Include="..\Store.DataAccess\Store.DataAccess.csproj" />
+    <ProjectReference Include="..\Store.DTO\Store.DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Store.DataAccess\Store.DataAccess.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

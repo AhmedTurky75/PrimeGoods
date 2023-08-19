@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Store.DataAccess;
+using Store.DataAccess.DataContext;
 
 #nullable disable
 
@@ -34,7 +34,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("GroupsId");
 
-                    b.ToTable("BuyerGroup");
+                    b.ToTable("BuyerGroup", (string)null);
                 });
 
             modelBuilder.Entity("BuyerProduct", b =>
@@ -49,7 +49,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("FavProductsId");
 
-                    b.ToTable("BuyerProduct");
+                    b.ToTable("BuyerProduct", (string)null);
                 });
 
             modelBuilder.Entity("CouponGroup", b =>
@@ -64,7 +64,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("GroupsId");
 
-                    b.ToTable("CouponGroup");
+                    b.ToTable("CouponGroup", (string)null);
                 });
 
             modelBuilder.Entity("DiscountProduct", b =>
@@ -79,7 +79,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("DiscountProduct");
+                    b.ToTable("DiscountProduct", (string)null);
                 });
 
             modelBuilder.Entity("OrderProduct", b =>
@@ -94,7 +94,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("OrderProduct");
+                    b.ToTable("OrderProduct", (string)null);
                 });
 
             modelBuilder.Entity("PropertySubCategory", b =>
@@ -109,7 +109,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("SubCategoriesId");
 
-                    b.ToTable("PropertySubCategory");
+                    b.ToTable("PropertySubCategory", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Brand", b =>
@@ -148,7 +148,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("Brand");
+                    b.ToTable("Brand", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Buyer", b =>
@@ -158,7 +158,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Buyer");
+                    b.ToTable("Buyer", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.BuyerCart", b =>
@@ -176,7 +176,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("BuyerId");
 
-                    b.ToTable("BuyerCart");
+                    b.ToTable("BuyerCart", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.BuyerProductReview", b =>
@@ -198,7 +198,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("BuyerId");
 
-                    b.ToTable("BuyerProductReview");
+                    b.ToTable("BuyerProductReview", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Category", b =>
@@ -230,7 +230,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("Category");
+                    b.ToTable("Category", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Coupon", b =>
@@ -262,7 +262,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("Coupon");
+                    b.ToTable("Coupon", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Discount", b =>
@@ -296,7 +296,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("Discount");
+                    b.ToTable("Discount", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Group", b =>
@@ -329,7 +329,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("Group");
+                    b.ToTable("Group", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Order", b =>
@@ -377,7 +377,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("Order");
+                    b.ToTable("Order", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Product", b =>
@@ -443,7 +443,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("Product");
+                    b.ToTable("Product", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.ProductProperties", b =>
@@ -462,7 +462,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("PropertiesId");
 
-                    b.ToTable("ProductProperties");
+                    b.ToTable("ProductProperties", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Promotion", b =>
@@ -507,7 +507,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("Promotion");
+                    b.ToTable("Promotion", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Property", b =>
@@ -539,7 +539,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("Properties");
+                    b.ToTable("Properties", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.Seller", b =>
@@ -561,7 +561,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Seller");
+                    b.ToTable("Seller", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.SubCategory", b =>
@@ -598,7 +598,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("SubCategory");
+                    b.ToTable("SubCategory", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.User", b =>
@@ -645,7 +645,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasIndex("UpdatedByID");
 
-                    b.ToTable("User");
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("Store.Models.UserAddress", b =>
@@ -673,7 +673,7 @@ namespace Store.DataAccess.Migrations
 
                     b.HasKey("UserId", "Country", "City", "Street", "BuildingNo", "Floor", "ZipCode");
 
-                    b.ToTable("UserAddress");
+                    b.ToTable("UserAddress", (string)null);
                 });
 
             modelBuilder.Entity("BuyerGroup", b =>
