@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Store.DataAccess;
+using Store.DataAccess.DataContext;
+using Store.DataAccess.Repositories;
+using Mapper = Store.Bussiness.Utilities.AutoMapper.AutoMapper; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,8 @@ builder.Services.AddDbContext<StoreContext>
     (options => options.UseSqlServer(builder.Configuration
     .GetConnectionString("SqlConnection")));
 
+builder.Services.AddScoped(typeof (IRepository<>), typeof (Repository<>));
+builder.Services.AddAutoMapper(typeof(Mapper));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -1,4 +1,4 @@
-﻿using static Store.Utility.Enums;
+﻿using static Store.Bussiness.Utilities.Enums.Enums;
 
 namespace Store.Models
 {
